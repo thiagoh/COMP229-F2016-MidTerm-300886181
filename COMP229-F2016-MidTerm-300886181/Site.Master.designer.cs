@@ -8,10 +8,10 @@
 //------------------------------------------------------------------------------
 
 namespace COMP229_F2016_MidTerm_300886181 {
-
-
+    
+    
     public partial class Site {
-
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +20,7 @@ namespace COMP229_F2016_MidTerm_300886181 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// home control.
         /// </summary>
@@ -29,7 +29,7 @@ namespace COMP229_F2016_MidTerm_300886181 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl home;
-
+        
         /// <summary>
         /// todo control.
         /// </summary>
@@ -38,7 +38,7 @@ namespace COMP229_F2016_MidTerm_300886181 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl todo;
-
+        
         /// <summary>
         /// MainContent control.
         /// </summary>
@@ -47,5 +47,14 @@ namespace COMP229_F2016_MidTerm_300886181 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        
+        /// <summary>
+        /// Scripts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Scripts;
     }
 }

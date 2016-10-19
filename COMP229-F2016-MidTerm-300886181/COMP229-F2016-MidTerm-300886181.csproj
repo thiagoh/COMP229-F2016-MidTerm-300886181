@@ -150,6 +150,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
+    <Content Include="Scripts\todo-details.js" />
+    <Content Include="Scripts\todo-list.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
     <Content Include="Site.Master" />
@@ -195,6 +197,7 @@
     </Compile>
     <Compile Include="Models\Todo.cs" />
     <Compile Include="Models\TodoContext.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="TodoDetails.aspx.cs">
       <DependentUpon>TodoDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
