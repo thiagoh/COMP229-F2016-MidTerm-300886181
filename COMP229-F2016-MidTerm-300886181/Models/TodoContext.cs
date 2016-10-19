@@ -5,8 +5,8 @@ namespace COMP229_F2016_MidTerm_300886181.Models {
     using System.Linq;
 
     public partial class TodoContext : DbContext {
-        public TodoContext()
-            : base("name=TodoConnection") {
+
+        public TodoContext() : base("name=TodoConnection") {
         }
 
         public virtual DbSet<Todo> Todos { get; set; }
