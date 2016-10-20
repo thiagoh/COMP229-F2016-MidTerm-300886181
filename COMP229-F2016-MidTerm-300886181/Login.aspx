@@ -9,25 +9,26 @@
 
                 <div class="alert alert-danger" role="alert" id="errorBox" runat="server"></div>
 
-                <h1>Todo Details</h1>
+                <h1>Login</h1>
 
                 <div class="form-group">
-                    <asp:Label Text="Todo Name" AssociatedControlID="UserName" runat="server" />
+                    <asp:Label Text="Username" AssociatedControlID="UserName" runat="server" />
                     <asp:TextBox
                         ID="UserName"
                         CssClass="form-control"
                         runat="server"
                         required="true"
-                        placeholder="Todo" />
+                        placeholder="Username" />
                 </div>
                 <div class="form-group">
-                    <asp:Label Text="Todo Notes" AssociatedControlID="Password" runat="server" />
+                    <asp:Label Text="Password" AssociatedControlID="Password" runat="server" />
                     <asp:TextBox
                         ID="Password"
                         TextMode="Password"
                         CssClass="form-control"
                         runat="server"
-                        placeholder="Notes" />
+                        required="true"
+                        placeholder="Password" />
                 </div>
                 <div class="text-right">
                     <asp:Button
