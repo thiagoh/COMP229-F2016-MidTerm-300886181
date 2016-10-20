@@ -8,7 +8,7 @@
  - User: thiagoh / Password: testing
  - User: tom / Password: testing
 
-*You can create yours*
+OBS: **You can create your users too! Give a try**
 
 ## Bonus:
  - Register of users
