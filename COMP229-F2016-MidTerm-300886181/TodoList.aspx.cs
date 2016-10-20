@@ -14,6 +14,14 @@ using COMP229_F2016_MidTerm_300886181.Models;
 using System.Collections;
 using System.Linq.Dynamic;
 
+/*
+    TodoList.aspx.cs
+    Mid Term test
+    Thiago de Andrade Souza 300886181
+    Created on 2016-10-19
+    Summary: This page lists the todos
+ */
+
 namespace COMP229_F2016_MidTerm_300886181 {
     public partial class TodoList : System.Web.UI.Page {
 

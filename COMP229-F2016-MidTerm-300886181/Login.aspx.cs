@@ -10,6 +10,14 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 
+/*
+    Login.aspx.cs
+    Mid Term test
+    Thiago de Andrade Souza 300886181
+    Created on 2016-10-19
+    Summary: This is used to login the user
+*/
+
 namespace COMP229_F2016_MidTerm_300886181 {
     public partial class Login : System.Web.UI.Page {
 

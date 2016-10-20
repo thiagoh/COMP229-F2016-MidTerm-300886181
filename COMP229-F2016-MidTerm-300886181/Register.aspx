@@ -1,6 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="COMP229_F2016_MidTerm_300886181.Register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<!--
+    Register.aspx
+    Mid Term test
+    Thiago de Andrade Souza 300886181
+    Created on 2016-10-19
+    Summary: This is page which registers the user
+-->
 
     <div class="container">
         <div class="row">

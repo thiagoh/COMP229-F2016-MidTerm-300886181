@@ -1,6 +1,14 @@
 ﻿<%@ Page Title="Todo List" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TodoList.aspx.cs" Inherits="COMP229_F2016_MidTerm_300886181.TodoList" %>
 
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<!--
+    TodoList.aspx
+    Mid Term test
+    Thiago de Andrade Souza 300886181
+    Created on 2016-10-19
+    Summary: This page lists the todos
+-->
 
     <div class="container">
 

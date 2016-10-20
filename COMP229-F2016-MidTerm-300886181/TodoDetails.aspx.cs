@@ -13,6 +13,14 @@ using System.Diagnostics;
 using COMP229_F2016_MidTerm_300886181.Models;
 using System.Collections;
 
+/*
+    TodoDetails.aspx.cs
+    Mid Term test
+    Thiago de Andrade Souza 300886181
+    Created on 2016-10-19
+    Summary: This is the CRUD of todo details
+ */
+
 namespace COMP229_F2016_MidTerm_300886181 {
     public partial class TodoDetails : System.Web.UI.Page {
 
