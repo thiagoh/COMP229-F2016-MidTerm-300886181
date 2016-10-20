@@ -47,11 +47,15 @@ namespace COMP229_F2016_MidTerm_300886181 {
 
         private void fillTodos(string col, string ascDesc) {
 
+            var userStore = new UserStore<IdentityUser>();
+            var userManager = new UserManager<IdentityUser>(userStore);
+            var user = userManager.FindById(HttpContext.Current.User.Identity.GetUserId());
+
             using (TodoContext db = new TodoContext()) {
 
                 string SortString = col + " " + ascDesc;
 
-                var Todos = (from _todos in db.Todos select _todos);
+                var Todos = (from _todos in db.Todos where _todos.TodoUserEmail == user.Email select _todos);
 
                 TodosGridView.DataSource = Todos.AsQueryable().OrderBy(SortString).ToList();
                 TodosGridView.DataBind();

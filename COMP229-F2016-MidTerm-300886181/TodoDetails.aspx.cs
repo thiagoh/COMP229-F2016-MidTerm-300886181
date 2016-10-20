@@ -48,6 +48,10 @@ namespace COMP229_F2016_MidTerm_300886181 {
 
         protected void SaveButton_Click(object sender, EventArgs e) {
 
+            var userStore = new UserStore<IdentityUser>();
+            var userManager = new UserManager<IdentityUser>(userStore);
+            var user = userManager.FindById(HttpContext.Current.User.Identity.GetUserId());
+
             using (TodoContext db = new TodoContext()) {
 
                 int todoId = Convert.ToInt32(Request.QueryString["todoId"]);
@@ -70,6 +74,8 @@ namespace COMP229_F2016_MidTerm_300886181 {
                     todo.TodoDescription = TodoName.Text;
                     todo.Completed = TodoCompleted.Checked;
                 }
+
+                todo.TodoUserEmail = user.Email;
 
                 // save the todo
                 db.SaveChanges();
