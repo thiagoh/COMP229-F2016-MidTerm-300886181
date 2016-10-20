@@ -92,11 +92,15 @@ namespace COMP229_F2016_MidTerm_300886181 {
 
         protected void TodosGridView_RowDeleting(object sender, GridViewDeleteEventArgs e) {
 
-            int todoId = Convert.ToInt32(TodosGridView.DataKeys[e.RowIndex].Values["todoId"]);
+            int todoId = Convert.ToInt32(TodosGridView.DataKeys[e.RowIndex].Values["TodoID"]);
 
             using (TodoContext db = new TodoContext()) {
 
                 Todo todoToBeDeleted = (from _todos in db.Todos where _todos.TodoID == todoId select _todos).FirstOrDefault();
+
+                if (todoToBeDeleted == null) {
+                    throw new Exception("TODO not found!");
+                }
 
                 // remove the Todo
                 db.Todos.Remove(todoToBeDeleted);
