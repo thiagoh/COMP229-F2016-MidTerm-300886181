@@ -6,32 +6,47 @@
 
         <div class="row">
 
-            <div class="col-md-offset-2 col-md-8">
+            <div class="col-xs-12 col-md-offset-2 col-md-8">
 
                 <h1>Todo List</h1>
 
-                <h3>You Have <asp:Label runat="server" ID="TodoCount" Text=""></asp:Label> Todos</h3>
+                <br />
 
-                <a href="TodoDetails.aspx" class="btn btn-success btn-sm">
-                    <i class="fa fa-plus"></i>Add Todo
-                </a>
+                <div class="row">
+                    <div class="col-md-8">
 
-                <div>
-                    <label for="PageSizeDropDownList">Records per Page:</label>
-                    <asp:DropDownList ID="PageSizeDropDownList" runat="server"
-                        AutoPostBack="true" 
-                        CssClass="btn btn-default btn-sm dropdown-toggle"
-                        OnSelectedIndexChanged="PageSizeDropDownList_SelectedIndexChanged">
-                        <asp:ListItem Text="3" Value="3" />
-                        <asp:ListItem Text="5" Value="5" />
-                        <asp:ListItem Text="10" Value="10" />
-                        <asp:ListItem Text="All" Value="10000" />
-                    </asp:DropDownList>
+                        <a href="TodoDetails.aspx" class="btn btn-success btn-sm">
+                            <i class="fa fa-plus"></i>Add Todo
+                        </a>
+                    </div>
                 </div>
+                <br />
+                <div class="row">
+                    <div class="col-xs-6 col-md-4">
+                        <label for="PageSizeDropDownList">Records per Page:</label>
+                        <asp:DropDownList ID="PageSizeDropDownList" runat="server"
+                            AutoPostBack="true"
+                            CssClass="btn btn-default btn-sm dropdown-toggle"
+                            OnSelectedIndexChanged="PageSizeDropDownList_SelectedIndexChanged">
+                            <asp:ListItem Text="3" Value="3" />
+                            <asp:ListItem Text="5" Value="5" />
+                            <asp:ListItem Text="10" Value="10" />
+                            <asp:ListItem Text="All" Value="10000" />
+                        </asp:DropDownList>
 
-                <asp:GridView ID="TodosGridView" runat="server" 
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <div class="text-right">
+                            You Have
+                    <asp:Label runat="server" ID="TodoCount" Text=""></asp:Label>
+                            Todos
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <asp:GridView ID="TodosGridView" runat="server"
                     AutoGenerateColumns="false"
-                    CssClass="table table-bordered table-striped table-hover" 
+                    CssClass="table table-bordered table-striped table-hover"
                     DataKeyNames="TodoID"
                     AllowPaging="true" PageSize="3" AllowSorting="true"
                     OnRowDeleting="TodosGridView_RowDeleting"
