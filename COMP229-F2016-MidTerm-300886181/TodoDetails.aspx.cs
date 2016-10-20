@@ -63,9 +63,7 @@ namespace COMP229_F2016_MidTerm_300886181 {
                     db.Todos.Add(todo);
 
                 } else {
-                    todo = (from _todo in db.Todos
-                            where _todo.TodoID == todoId
-                            select _todo).FirstOrDefault();
+                    todo = (from _todo in db.Todos where _todo.TodoID == todoId select _todo).FirstOrDefault();
                 }
 
                 if (todo != null) {

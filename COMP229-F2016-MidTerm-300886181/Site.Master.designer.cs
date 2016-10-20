@@ -76,6 +76,15 @@ namespace COMP229_F2016_MidTerm_300886181 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl todo;
         
         /// <summary>
+        /// logout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl logout;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

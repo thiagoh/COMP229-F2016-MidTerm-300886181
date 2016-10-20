@@ -10,6 +10,8 @@
 
                 <h1>Todo List</h1>
 
+                <h3>You Have <asp:Label runat="server" ID="TodoCount" Text=""></asp:Label> Todos</h3>
+
                 <a href="TodoDetails.aspx" class="btn btn-success btn-sm">
                     <i class="fa fa-plus"></i>Add Todo
                 </a>

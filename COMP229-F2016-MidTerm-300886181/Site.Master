@@ -38,8 +38,9 @@
                         </asp:PlaceHolder>
 
                         <asp:PlaceHolder ID="PrivateMenu" runat="server">
-                            <li id="home" runat="server"><a href="Default.aspx"><i class="fa fa-home fa-lg"></i>Home</a></li>
-                            <li id="todo" runat="server"><a href="TodoList.aspx"><i class="fa fa-list-alt fa-lg"></i>Todo List</a></li>
+                            <li id="home" runat="server"><a href="/Default.aspx"><i class="fa fa-home fa-lg"></i>Home</a></li>
+                            <li id="todo" runat="server"><a href="/TodoList.aspx"><i class="fa fa-list-alt fa-lg"></i>Todo List</a></li>
+                            <li id="logout" runat="server"><a href="/Logout.aspx"><i class="fa fa-sign-out fa-lg"></i>Logout</a></li>
                         </asp:PlaceHolder>
 
                     </ul>

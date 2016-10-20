@@ -55,9 +55,11 @@ namespace COMP229_F2016_MidTerm_300886181 {
 
                 string SortString = col + " " + ascDesc;
 
-                var Todos = (from _todos in db.Todos where _todos.TodoUserEmail == user.Email select _todos);
+                var todos = (from _todos in db.Todos where _todos.TodoUserEmail == user.Email select _todos);
 
-                TodosGridView.DataSource = Todos.AsQueryable().OrderBy(SortString).ToList();
+                TodoCount.Text = Convert.ToString(todos.AsQueryable().Count());
+
+                TodosGridView.DataSource = todos.AsQueryable().OrderBy(SortString).ToList();
                 TodosGridView.DataBind();
             }
         }
