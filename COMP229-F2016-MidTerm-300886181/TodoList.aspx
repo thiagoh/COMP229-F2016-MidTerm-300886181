@@ -6,28 +6,65 @@
 
         <div class="row">
 
-            <h1>Todo Details</h1>
+            <div class="col-md-offset-2 col-md-8">
 
-            <div class="form-group">
-                <asp:Label Text="Todo Name" AssociatedControlID="TodoName" runat="server" />
-                <asp:TextBox ID="TodoName" CssClass="form-control" runat="server" placeholder="Todo" />
-            </div>
-            <div class="form-group">
-                <asp:Label Text="Todo Notes" AssociatedControlID="TodoNotes" runat="server" />
-                <asp:TextBox ID="TodoNotes" CssClass="form-control" runat="server" placeholder="Notes" />
-            </div>
-            <div class="checkbox">
-                <label>
-                    <asp:CheckBox ID="TodoCompleted" runat="server" Text="Completed" />
-                </label>
-            </div>
-            <div class="text-right">
-                <asp:Button ID="CancelButton" runat="server" CssClass="btn btn-warning" Text="Cancel" OnClick="CancelButton_Click" />
-                <asp:Button ID="SaveButton" runat="server" CssClass="btn btn-primary" Text="Save" OnClick="SaveButton_Click" />
+                <h1>Todo List</h1>
+
+                <a href="TodoDetails.aspx" class="btn btn-success btn-sm">
+                    <i class="fa fa-plus"></i>Add Todo
+                </a>
+
+                <div>
+                    <label for="PageSizeDropDownList">Records per Page:</label>
+                    <asp:DropDownList ID="PageSizeDropDownList" runat="server"
+                        AutoPostBack="true" CssClass="btn btn-default btn-sm dropdown-toggle"
+                        OnSelectedIndexChanged="PageSizeDropDownList_SelectedIndexChanged">
+                        <asp:ListItem Text="3" Value="3" />
+                        <asp:ListItem Text="5" Value="5" />
+                        <asp:ListItem Text="10" Value="10" />
+                        <asp:ListItem Text="All" Value="10000" />
+                    </asp:DropDownList>
+                </div>
+
+                <asp:GridView ID="TodosGridView" runat="server" AutoGenerateColumns="false"
+                    CssClass="table table-bordered table-striped table-hover" DataKeyNames="TodoID"
+                    AllowPaging="true" PageSize="3" AllowSorting="true"
+                    OnRowDeleting="TodosGridView_RowDeleting"
+                    OnPageIndexChanging="TodosGridView_PageIndexChanging"
+                    OnSorting="TodosGridView_Sorting"
+                    OnRowDataBound="TodosGridView_RowDataBound"
+                    PagerStyle-CssClass="pagination-ys">
+                    <Columns>
+                        <asp:BoundField DataField="TodoID" Visible="false" SortExpression="TodoID" />
+                        <asp:BoundField DataField="TodoDescription" HeaderText="Todo" Visible="true" SortExpression="TodoDescription" />
+                        <asp:BoundField DataField="TodoNotes" HeaderText="Notes" Visible="true" SortExpression="TodoNotes" />
+
+                        <asp:CheckBoxField DataField="Completed"
+                            HeaderText="Completed" Visible="true" SortExpression="Completed" />
+
+                        <asp:HyperLinkField runat="server"
+                            HeaderText="Edit"
+                            Text="<i class='fa fa-pencil-square-o fa-lg'></i> Edit"
+                            NavigateUrl="~/TodoDetails.aspx.cs"
+                            ControlStyle-CssClass="btn btn-primary btn-sm"
+                            DataNavigateUrlFields="TodoID"
+                            DataNavigateUrlFormatString="TodoDetails.aspx?todoId={0}" />
+
+                        <asp:CommandField runat="server"
+                            HeaderText="Delete"
+                            DeleteText="<i class='fa fa-trash-o fa-lg'></i> Delete"
+                            ShowDeleteButton="true"
+                            ButtonType="Link"
+                            ControlStyle-CssClass="btn btn-danger btn-sm" />
+                    </Columns>
+                </asp:GridView>
+
+
+
             </div>
         </div>
     </div>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="Scripts" runat="server">
-
+    <script src="/Scripts/todo-list.js"></script>
 </asp:Content>

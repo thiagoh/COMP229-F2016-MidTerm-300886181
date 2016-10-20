@@ -6,25 +6,52 @@
 
         <div class="row">
 
-            <h1>Todo Details</h1>
+            <div class="col-md-offset-2 col-md-8">
 
-            <div class="form-group">
-                <asp:Label Text="Todo Name" AssociatedControlID="TodoName" runat="server" />
-                <asp:TextBox ID="TodoName" CssClass="form-control" runat="server" placeholder="Todo" />
-            </div>
-            <div class="form-group">
-                <asp:Label Text="Todo Notes" AssociatedControlID="TodoNotes" runat="server" />
-                <asp:TextBox ID="TodoNotes" CssClass="form-control" runat="server" placeholder="Notes" />
-            </div>
-            <div class="checkbox">
-                <label>
-                    <asp:CheckBox ID="TodoCompleted" runat="server" Text="Completed" />
-                </label>
-            </div>
-            <div class="text-right">
-                <asp:Button ID="CancelButton" runat="server" CssClass="btn btn-warning" Text="Cancel" OnClick="CancelButton_Click"/>
-                <asp:Button ID="SaveButton" runat="server" CssClass="btn btn-primary" Text="Save" OnClick="SaveButton_Click" />
+                <h1>Todo Details</h1>
+
+                <div class="form-group">
+                    <asp:Label Text="Todo Name" AssociatedControlID="TodoName" runat="server" />
+                    <asp:TextBox 
+                        ID="TodoName" 
+                        CssClass="form-control" 
+                        runat="server" 
+                        required="true"
+                        placeholder="Todo" />
+                </div>
+                <div class="form-group">
+                    <asp:Label Text="Todo Notes" AssociatedControlID="TodoNotes" runat="server" />
+                    <asp:TextBox 
+                        ID="TodoNotes" 
+                        CssClass="form-control" 
+                        runat="server" 
+                        placeholder="Notes" />
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <asp:CheckBox ID="TodoCompleted" runat="server" Text="Completed" />
+                    </label>
+                </div>
+                <div class="text-right">
+                    <asp:Button 
+                        ID="CancelButton" 
+                        runat="server" 
+                        CssClass="btn btn-lg btn-warning" 
+                        Text="Cancel" 
+                        UseSubmitBehavior="false" 
+                        CausesValidation="false"
+                        OnClick="CancelButton_Click" />
+                    <asp:Button 
+                        ID="SaveButton" 
+                        runat="server" 
+                        CssClass="btn btn-lg btn-primary" 
+                        Text="Save" 
+                        OnClick="SaveButton_Click" />
+                </div>
             </div>
         </div>
     </div>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="Scripts" runat="server">
+    <script src="/Scripts/todo-details.js"></script>
 </asp:Content>

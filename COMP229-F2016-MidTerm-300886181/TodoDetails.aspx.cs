@@ -39,9 +39,9 @@ namespace COMP229_F2016_MidTerm_300886181 {
 
                 if (todo != null) {
 
-                    todo.TodoNotes = TodoNotes.Text;
-                    todo.TodoDescription = TodoName.Text;
-                    todo.Completed = TodoCompleted.Checked;
+                    TodoName.Text= todo.TodoDescription;
+                    TodoNotes.Text= todo.TodoNotes;
+                    TodoCompleted.Checked = todo.Completed;
                 }
             }
         }
