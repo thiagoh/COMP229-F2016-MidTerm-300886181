@@ -2,6 +2,13 @@
 
 ## Up on Azure!
  - http://comp229-f2016-midterm-300886181.azurewebsites.net/
+ 
+## Users available to test the Azure link
+ - User: julio / Password: testing
+ - User: thiagoh / Password: testing
+ - User: tom / Password: testing
+
+*You can create yours*
 
 ## Bonus:
  - Register of users
