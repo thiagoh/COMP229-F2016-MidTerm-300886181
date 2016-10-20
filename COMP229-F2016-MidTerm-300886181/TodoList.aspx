@@ -17,7 +17,8 @@
                 <div>
                     <label for="PageSizeDropDownList">Records per Page:</label>
                     <asp:DropDownList ID="PageSizeDropDownList" runat="server"
-                        AutoPostBack="true" CssClass="btn btn-default btn-sm dropdown-toggle"
+                        AutoPostBack="true" 
+                        CssClass="btn btn-default btn-sm dropdown-toggle"
                         OnSelectedIndexChanged="PageSizeDropDownList_SelectedIndexChanged">
                         <asp:ListItem Text="3" Value="3" />
                         <asp:ListItem Text="5" Value="5" />
@@ -26,8 +27,10 @@
                     </asp:DropDownList>
                 </div>
 
-                <asp:GridView ID="TodosGridView" runat="server" AutoGenerateColumns="false"
-                    CssClass="table table-bordered table-striped table-hover" DataKeyNames="TodoID"
+                <asp:GridView ID="TodosGridView" runat="server" 
+                    AutoGenerateColumns="false"
+                    CssClass="table table-bordered table-striped table-hover" 
+                    DataKeyNames="TodoID"
                     AllowPaging="true" PageSize="3" AllowSorting="true"
                     OnRowDeleting="TodosGridView_RowDeleting"
                     OnPageIndexChanging="TodosGridView_PageIndexChanging"

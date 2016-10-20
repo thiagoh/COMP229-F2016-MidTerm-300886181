@@ -24,8 +24,25 @@ namespace COMP229_F2016_MidTerm_300886181 {
                 Session["SortColumn"] = "TodoID";
                 Session["SortDirection"] = "DESC";
 
-                fillTodos(Convert.ToString(Session["SortColumn"]), Convert.ToString(Session["SortDirection"]));
+                TodosGridView.PageSize = getPageSize();
+
+                fillTodos(getSortColumn(), getSortDirection());
             }
+        }
+
+        private int getPageSize() {
+
+            int pageSize = 0;
+
+            if (Session["PageSize"] == null || Session["PageSize"].ToString().Trim() == "") {
+                pageSize = 3;
+            }else {
+                pageSize = Convert.ToInt32(Session["PageSize"]);
+            }
+
+            pageSize = Math.Min(3, pageSize);
+
+            return pageSize;
         }
 
         private void fillTodos(string col, string ascDesc) {
@@ -45,9 +62,10 @@ namespace COMP229_F2016_MidTerm_300886181 {
 
             // pagination (page size, how many rows per page)
             TodosGridView.PageSize = Convert.ToInt32(PageSizeDropDownList.SelectedValue);
+            Session["PageSize"] = PageSizeDropDownList.SelectedValue;
 
             // refresh 
-            fillTodos(Convert.ToString(Session["SortColumn"]), Convert.ToString(Session["SortDirection"]));
+            fillTodos(getSortColumn(), getSortDirection());
         }
 
         protected void TodosGridView_PageIndexChanging(object sender, GridViewPageEventArgs e) {
@@ -56,7 +74,14 @@ namespace COMP229_F2016_MidTerm_300886181 {
             TodosGridView.PageIndex = e.NewPageIndex;
 
             // refresh 
-            fillTodos(Convert.ToString(Session["SortColumn"]), Convert.ToString(Session["SortDirection"]));
+            fillTodos(getSortColumn(), getSortDirection());
+        }
+
+        private string getSortColumn() {
+            return Convert.ToString(Session["SortColumn"] + "");
+        }
+        private string getSortDirection() {
+            return Convert.ToString(Session["SortDirection"] + "");
         }
 
         protected void TodosGridView_RowDeleting(object sender, GridViewDeleteEventArgs e) {
@@ -74,12 +99,9 @@ namespace COMP229_F2016_MidTerm_300886181 {
                 db.SaveChanges();
 
                 // refresh
-                fillTodos(Convert.ToString(Session["SortColumn"]), Convert.ToString(Session["SortDirection"]));
+                fillTodos(Convert.ToString(Session["SortColumn"]), getSortDirection());
             }
-
         }
-
-
 
         protected void TodosGridView_Sorting(object sender, GridViewSortEventArgs e) {
 
@@ -87,10 +109,10 @@ namespace COMP229_F2016_MidTerm_300886181 {
             Session["SortColumn"] = e.SortExpression;
 
             // refresh 
-            fillTodos(Convert.ToString(Session["SortColumn"]), Convert.ToString(Session["SortDirection"]));
+            fillTodos(Convert.ToString(Session["SortColumn"]), getSortDirection());
 
             // ascending or descending
-            Session["SortDirection"] = Convert.ToString(Session["SortDirection"]) == "ASC" ? "DESC" : "ASC";
+            Session["SortDirection"] = getSortDirection() == "ASC" ? "DESC" : "ASC";
         }
 
         protected void TodosGridView_RowDataBound(object sender, GridViewRowEventArgs e) {
